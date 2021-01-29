@@ -40,7 +40,7 @@
   <table class="table table-bordered table-print" id="planning__data">
     <thead>
       <tr class="text-center">
-        <th>kamer</th>
+        <th>room</th>
         @foreach($dates as $date)
           <th class="day">
             {{ $date['day'] }}<br />{{ $date['date_str'] }}

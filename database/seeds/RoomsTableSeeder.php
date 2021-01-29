@@ -14,7 +14,7 @@ class RoomsTableSeeder extends Seeder
     {
         for ($i=0; $i < 5; $i++) {
             $r = new Room;
-            $r->name = "Kamer ".($i+1);
+            $r->name = "Room ".($i+1);
             $r->beds = rand(3,6);
             $r->layout = [$r->beds];
             $r->sorting = Room::count();

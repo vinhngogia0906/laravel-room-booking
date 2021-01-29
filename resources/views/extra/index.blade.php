@@ -3,15 +3,15 @@
 @section('content')
 <h1>Extra's</h1>
 
-<p><a href="{{ route('extra.create') }}" type="button" class="btn btn-primary">Extra toevoegen</a></p>
+<p><a href="{{ route('extra.create') }}" type="button" class="btn btn-primary">Add Extra</a></p>
 
 <table class="table table-hover">
     <thead class="thead-dark">
     <tr>
-        <th>Naam</th>
-        <th>Prijs</th>
-        <th>Per</th>
-        <th>Icoon</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Each</th>
+        <th>Icon</th>
         <th width="5%"></th>
     </tr>
     </thead>

@@ -15,21 +15,21 @@
         <a href="{{ route('planning', ['date' => $dates[0]['date']->copy()->addWeek()->toDateString()]) }}" class="btn btn-primary" id="btn__next"><i class="fa fa-chevron-right"></i></a>
       </div>
 
-      <a href="{{ route('planning') }}" class="btn btn-secondary mb-2">Vandaag</a>
+      <a href="{{ route('planning') }}" class="btn btn-secondary mb-2">Today</a>
     </div>
     <form action="{{ route('planning.change_date') }}" class="form-inline d-inline-flex  justify-content-center mb-2" method="POST">
       {{ csrf_field() }}
       <input class="form-control mr-2" name="goto_date"
         autocomplete="off" type="date" required
         value="{{ $dates[0]['date']->format('Y-m-d') }}">
-      <button class="btn btn-success my-2 my-sm-0" type="submit">Ga</button>
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Go</button>
     </form>
 
     <div>
-      <a href="{{ route('export.email', ['date' => $dates[0]['date']->toDateString()]) }}" class="btn btn-secondary mb-2">Export emailadressen</a>
+      <a href="{{ route('export.email', ['date' => $dates[0]['date']->toDateString()]) }}" class="btn btn-secondary mb-2">Export email address</a>
       <a href="{{ route('print', ['date' => $dates[0]['date']->toDateString()]) }}" class="btn btn-secondary mb-2">Print <i class="fas fa-print fa-sm"></i></a>
       @can('add.booking')
-      <a href="{{ route('booking.create') }}?date={{ $dates[0]['date']->toDateString() }}" class="btn btn-success mb-2">Nieuwe boeking</a>
+      <a href="{{ route('booking.create') }}?date={{ $dates[0]['date']->toDateString() }}" class="btn btn-success mb-2">New booking</a>
       @endcan
     </div>
   </div>
@@ -37,7 +37,7 @@
 
 <div class="row mb-2">
   <div class="col-sm d-flex justify-content-between">
-    <textarea class="form-control" placeholder="Notities voor deze week..." id="weeklyNotes"
+    <textarea class="form-control" placeholder="Notes for this week..." id="weeklyNotes"
       data-date="{{ $dates[0]['date']->format('Y-m-d') }}"
       @isset($note) data-note-id="{{ $note->id }}" @endisset>@isset($note){{ $note->notes }}@endisset</textarea>
   </div>
@@ -47,7 +47,7 @@
 <table class="table table-bordered" id="planning__data">
   <thead>
     <tr class="text-center">
-      <th>kamer</th>
+      <th>room</th>
       <th>bed</th>
       @foreach($dates as $date)
         <th class="day @if(Carbon\Carbon::now()->isSameDay($date['date'])) day__now @endif">

@@ -1,18 +1,18 @@
 @extends('layout.base')
 
 @section('content')
-<h1>Welkom!</h1>
+<h1>Welcome!</h1>
 
-<h3>Overzicht voor de komende twee weken</h3>
+<h3>Overview for the next two weeks</h3>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Van</th>
-      <th>Tot</th>
-      <th>Boeker</th>
-      <th>Land</th>
-      <th># gasten</th>
-      <th>Kamer</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Booker</th>
+      <th>Country</th>
+      <th># visitors</th>
+      <th>Room</th>
   </thead>
   <tbody>
     @foreach($bookings as $booking)
@@ -31,7 +31,7 @@
       <td>
         {{ $booking->rooms[0]->name }}
         @if ($booking->rooms[0]->properties->options['part'] != -1)
-          &mdash; kamer {{ $booking->rooms[0]->properties->options['part']+1 }}
+          &mdash; room {{ $booking->rooms[0]->properties->options['part']+1 }}
         @endif
       </td>
     </tr>
@@ -39,16 +39,16 @@
   </tbody>
 </table>
 
-<h3 class="mt-5">Vertrekken vandaag</h3>
+<h3 class="mt-5">Leave today</h3>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Van</th>
-      <th>Tot</th>
-      <th>Boeker</th>
-      <th># gasten</th>
-      <th>Kamer</th>
-      <th>Prijs</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Booker</th>
+      <th># visitors</th>
+      <th>Room</th>
+      <th>Price</th>
   </thead>
   <tbody>
     @foreach($leaving as $booking)

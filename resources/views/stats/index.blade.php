@@ -2,7 +2,7 @@
 
 @section('content')
 @php use App\Http\Controllers\StatsController; @endphp
-<h1>Statistieken</h1>
+<h1>Statistics</h1>
 
 <form method="GET">
   <div class="form-row">
@@ -11,15 +11,15 @@
         <label for="statType">Type</label>
           <select class="custom-select" name="type" id="statType">
             <option value="{{ StatsController::GUESTS_PER_COUNTRY }}"
-                @isset($type) @if($type === StatsController::GUESTS_PER_COUNTRY) selected @endif @endisset>Gasten per land</option>
+                @isset($type) @if($type === StatsController::GUESTS_PER_COUNTRY) selected @endif @endisset>Guest By Country</option>
             <option value="{{ StatsController::NO_OF_NIGHTS }}"
-                @isset($type) @if($type === StatsController::NO_OF_NIGHTS) selected @endif @endisset>Aantal overnachtingen</option>
+                @isset($type) @if($type === StatsController::NO_OF_NIGHTS) selected @endif @endisset>Number of overnight stays</option>
           </select>
       </div>
     </div>
     <div class="form-group col-md-3">
       <div class="form-group">
-        <label for="fromDateInput">Van</label>
+        <label for="fromDateInput">From</label>
         <div class="input-group date">
           <input type="date" class="form-control actual_range" name="from" id="fromDateInput" autocomplete="off" required
             @if(isset($from_date)) value="{{ $from_date->format('Y-m-d') }}"@endif>
@@ -28,7 +28,7 @@
     </div>
     <div class="form-group col-md-3">
       <div class="form-group">
-        <label for="toDateInput">Tot</label>
+        <label for="toDateInput">To</label>
         <div class="input-group date">
           <input type="date" class="form-control actual_range" name="to" id="toDateInput" autocomplete="off" required
             @if(isset($to_date)) value="{{ $to_date->format('Y-m-d') }}"@endif>
@@ -38,14 +38,14 @@
     <div class="form-group col-md-3">
       <div class="form-group">
         <label>&nbsp;</label>
-        <button type="submit" class="form-control btn btn-primary">Genereer</button>
+        <button type="submit" class="form-control btn btn-primary">Generate</button>
       </div>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-9">
       <div class="form-group">
-        <p>Kamers</p>
+        <p>Rooms</p>
         @foreach ($rooms as $room)
           <div class="custom-control custom-checkbox">
             <input class="custom-control-input" type="checkbox"
@@ -65,10 +65,10 @@
     <table class="table table-hover">
         <thead>
         <tr>
-            <th>Land</th>
-            <th>Boekingen</th>
-            <th>Gasten</th>
-            <th>Gem. gasten per boeking</th>
+            <th>Country</th>
+            <th>Bookings</th>
+            <th>Visitors</th>
+            <th>Avg. visitors per booking</th>
         </tr>
         </thead>
         <tbody>
@@ -86,7 +86,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>TOTAAL</th>
+                <th>TOTAL</th>
                 <th>{{ $stats ? $stats['totals']['bookings'] : 0 }}</th>
                 <th>{{ $stats ? $stats['totals']['guests'] : 0 }}</th>
                 <th>{{ $stats ? round($stats['totals']['guests_per_booking'], 2) : 0 }}</th>

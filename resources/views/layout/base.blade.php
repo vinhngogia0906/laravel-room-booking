@@ -33,13 +33,13 @@
                         </li>
                         @can('edit.all')
                         <li class="nav-item @if (strstr('kamers', Request::path())) active @endif">
-                            <a class="nav-link" href="{{ route('rooms') }}">Kamers</a>
+                            <a class="nav-link" href="{{ route('rooms') }}">Rooms</a>
                         </li>
                         <li class="nav-item @if (strstr('extras', Request::path())) active @endif">
                             <a class="nav-link" href="{{ route('extra') }}">Extra's</a>
                         </li>
                         <li class="nav-item @if (strstr('stats', Request::path())) active @endif">
-                            <a class="nav-link" href="{{ route('stats') }}">Statistieken</a>
+                            <a class="nav-link" href="{{ route('stats') }}">Statistics</a>
                         </li>
                         @endcan
                         @can('access.admin')
@@ -61,8 +61,8 @@
                     </ul>
                     <form action="{{ route('booking.search') }}" method="GET" class="form-inline my-2 my-lg-0">
                         {{-- {{ csrf_field() }} --}}
-                        <input class="form-control mr-sm-2 search__input" placeholder="Zoek boeking... (min. 3 karakters)" type="text" name="search" value="{{ app('request')->input('search') }}" pattern=".{3,}" title="min. 3 karakters" required>
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Zoek</button>
+                        <input class="form-control mr-sm-2 search__input" placeholder="Search booking... (min. 3 characters)" type="text" name="search" value="{{ app('request')->input('search') }}" pattern=".{3,}" title="min. 3 karakters" required>
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                     </form>
                     @endif
                 </div>
@@ -73,7 +73,7 @@
             @yield('content')
         </div>
 
-        <footer class="text-center mb-3"><hr />by henri</footer>
+        <footer class="text-center mb-3"><hr />by Henri and Vinh</footer>
 
         <script type="text/javascript" src="/js/app.js" ></script>
     </body>

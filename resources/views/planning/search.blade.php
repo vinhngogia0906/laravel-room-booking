@@ -13,12 +13,12 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Van</th>
-      <th>Tot</th>
-      <th>Boeker</th>
-      <th>Land</th>
-      <th># gasten</th>
-      <th>Kamer</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Booker</th>
+      <th>Country</th>
+      <th># visitors</th>
+      <th>Room</th>
   </thead>
   <tbody>
     @foreach($bookings as $booking)

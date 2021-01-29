@@ -23,9 +23,9 @@
     @include('guests.create_form')
     @if(isset($guest))
       {{-- <a href="{{ route('guest.delete', $guest) }}" type="submit" class="btn btn-danger">Verwijder gast</a> --}}
-      <button type="submit" class="btn btn-primary float-right">Opslaan!</button>
+      <button type="submit" class="btn btn-primary float-right">Save!</button>
     @else
-      <button type="submit" class="btn btn-primary float-right">Voeg toe!</button>
+      <button type="submit" class="btn btn-primary float-right">Add!</button>
     @endif
   </fieldset>
 </form>

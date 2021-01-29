@@ -25,7 +25,7 @@
         <div class="row">
         <div class="col-sm-8 offset-sm-2">
             <div class="form-group row">
-                <label for="usernameInput" class="col-sm-4 col-form-label">Gebruikersnaam</label>
+                <label for="usernameInput" class="col-sm-4 col-form-label">Username</label>
                 <div class="col-sm-8">
                 <input class="form-control" name="username" id="usernameInput"  autocomplete="off" type="text" required
                     @if(old('username')) value="{{ old('username') }}"
@@ -50,13 +50,13 @@
             </div>
             @if(!isset($user))
             <div class="form-group row">
-                <label for="password" class="col-sm-4 col-form-label">Wachtwoord</label>
+                <label for="password" class="col-sm-4 col-form-label">Password</label>
                 <div class="col-sm-8">
                 <input id="password" type="password" class="form-control" name="password" required>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="password_confirmation" class="col-sm-4 col-form-label">Herhaal wachtwoord</label>
+                <label for="password_confirmation" class="col-sm-4 col-form-label">Confirm password</label>
                 <div class="col-sm-8">
                 <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required>
                 </div>
@@ -80,9 +80,9 @@
             @endif
 
             @if(isset($user))
-                <button type="submit" class="btn btn-primary float-right">Opslaan!</button>
+                <button type="submit" class="btn btn-primary float-right">Save!</button>
             @else
-                <button type="submit" class="btn btn-primary float-right">Voeg toe!</button>
+                <button type="submit" class="btn btn-primary float-right">Add!</button>
             @endif
         </div>
         </div>

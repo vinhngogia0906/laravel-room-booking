@@ -102,7 +102,7 @@ class PlanningController extends Controller
         } else {
             return redirect()
                 ->route('booking.edit', $booking)
-                ->with('error', 'Niet voldoende bedden, of de kamer kan niet volledig geboekt worden.')
+                ->with('error', 'Not enough beds, or the room cannot be fully booked.')
                 ->withInput();
         }
     }
@@ -118,7 +118,7 @@ class PlanningController extends Controller
         } else {
             return redirect()
                 ->route('booking.create')
-                ->with('error', 'Niet voldoende bedden, of de kamer kan niet volledig geboekt worden.')
+                ->with('error', 'Not enough beds, or the room cannot be fully booked.')
                 ->withInput();
         }
     }

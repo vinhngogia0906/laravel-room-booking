@@ -1,7 +1,7 @@
 @extends('layout.base')
 
 @section('content')
-<h1>Kamer toevoegen</h1>
+<h1>Add Room</h1>
 
 <div class="row justify-content">
   <div class="col-md-auto">
@@ -30,9 +30,9 @@
       <input class="form-control" name="layout" id="layoutInput" placeholder="Indeling" autocomplete="off" type="text" required @if(isset($room)) value="{{ $room->layoutStr }}" @endif>
     </div>
     @if(isset($room))
-      <button type="submit" class="btn btn-primary">Opslaan!</button>
+      <button type="submit" class="btn btn-primary">Save!</button>
     @else
-      <button type="submit" class="btn btn-primary">Voeg toe!</button>
+      <button type="submit" class="btn btn-primary">Add!</button>
     @endif
   </fieldset>
 </form>

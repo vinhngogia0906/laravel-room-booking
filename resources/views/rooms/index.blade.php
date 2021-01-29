@@ -1,16 +1,16 @@
 @extends('layout.base')
 
 @section('content')
-<h1>Kamers en bedden</h1>
+<h1>Rooms and Beds</h1>
 
-<p><a href="{{ route('room.add') }}" type="button" class="btn btn-primary">Kamer toevoegen</a></p>
+<p><a href="{{ route('room.add') }}" type="button" class="btn btn-primary">Add room</a></p>
 
 <table class="table table-striped table-hover table-bordered">
     <thead class="thead-dark">
         <tr>
             <th width="60"></th>
-            <th>Naam</th>
-            <th># bedden</th>
+            <th>Name</th>
+            <th># beds</th>
             <th width="5%"></th>
         </tr>
     </thead>

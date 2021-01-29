@@ -9,7 +9,7 @@
 
 <div class="row mt-2">
   <div class="col-sm">
-    <h3>Boeking info
+    <h3>Booking info
       @can('edit.booking')
       <a href="{{ route('booking.delete', $booking) }}" class="btn btn-danger float-right js-delete"><i class="far fa-trash-alt"> </i></a>
       <a href="{{ route('booking.edit', $booking) }}" class="btn btn-primary float-right">Wijzig boeking</a>
@@ -37,7 +37,7 @@
       </tr>
 
       <tr>
-        <th>Kamer</th>
+        <th>Room</th>
         <td>
           {{ $booking->rooms[0]->name }}
           @if ($booking->rooms[0]->properties->options['part'] != -1)
@@ -82,7 +82,7 @@
     </h3>
     <table class="table table-hover mt-2">
       <tr>
-        <th>Naam</th>
+        <th>Name</th>
         <td
           class="booked {{ $booking->color()['luma'] > 180.0 ? 'reversed' : '' }}"
           style="background-color: {{ $booking->color()['color'] }}">
@@ -94,18 +94,18 @@
         <td><a href="mailto:{{ $booking->customer->email }}">{{ $booking->customer->email }}</a></td>
       </tr>
       <tr>
-        <th>GSM</th>
+        <th>Phone</th>
         <td><a href="tel:{{ $booking->customer->phone }}">{{ $booking->customer->phone }}</a></td>
       </tr>
       <tr>
-        <th>Land</th>
+        <th>Country</th>
         <td>{{ $booking->customer->country_str }}</td>
       </tr>
     </table>
 
 
     @unless($booking->guests === 1)
-    <h3>Extra gasten
+    <h3>Extra visitor
       @if ($booking->extraGuests->count() < $booking->guests-1)
         <a href="" class="btn btn-primary float-right js-add-extra-guest">Extra gast toevoegen</a>
       @endif
@@ -137,10 +137,10 @@
   <thead class="thead-dark">
     <tr>
       <th></th>
-      <th>Aantal</th>
-      <th>Naam</th>
-      <th>Prijs</th>
-      <th>Per</th>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Each</th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -192,9 +192,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <select class="form-control custom-select mt-2 js-extra-guest-select" name="extra-guest" placeholder="Selecteer gast..." id="guestSelect">
+        <select class="form-control custom-select mt-2 js-extra-guest-select" name="extra-guest" placeholder="Select guest..." id="guestSelect">
           <option></option>
-          <option value="new-guest">Nieuwe gast...</option>
+          <option value="new-guest">New guest...</option>
           @foreach($guests as $guest)
             <option
               @if(isset($booking) && $booking->customer_id == $guest->id) selected @endif value="{{ $guest->id }}">{{ $guest->name }}</option>
@@ -207,8 +207,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
-        <button class="btn btn-primary" id="addExtraGuest">Opslaan</button>
+        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button class="btn btn-primary" id="addExtraGuest">Save</button>
       </div>
     </div>
   </div>
@@ -218,7 +218,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="extrasModalLabel">Extra toevoegen</h5>
+        <h5 class="modal-title" id="extrasModalLabel">Add Extra</h5>
         <button class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -233,8 +233,8 @@
         <input class="form-control" name="amount" placeholder="Aantal" type=number min=1 />
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
-        <button class="btn btn-primary" id="addExtra">Voeg toe</button>
+        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button class="btn btn-primary" id="addExtra">Add</button>
       </div>
     </div>
   </div>
