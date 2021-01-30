@@ -14,11 +14,11 @@
   {{ csrf_field() }}
   <fieldset>
     <div class="form-group">
-      <label for="nameInput">Naam</label>
-      <input class="form-control" name="name" id="nameInput" placeholder="Naam" autocomplete="off" type="text" required @if(isset($room)) value="{{ $room->name }}" @endif>
+      <label for="nameInput">Name</label>
+      <input class="form-control" name="name" id="nameInput" placeholder="Name" autocomplete="off" type="text" required @if(isset($room)) value="{{ $room->name }}" @endif>
     </div>
     <div class="form-group">
-      <label for="bedsSelect"># bedden</label>
+      <label for="bedsSelect"># beds</label>
       <select class="form-control" name="beds" id="bedsSelect">
         @for($i=0; $i<10; $i++)
           <option @if(isset($room) && $room->beds == ($i+1)) selected @endif>{{ $i+1 }}</option>
@@ -26,8 +26,8 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="layoutInput">Indeling</label>
-      <input class="form-control" name="layout" id="layoutInput" placeholder="Indeling" autocomplete="off" type="text" required @if(isset($room)) value="{{ $room->layoutStr }}" @endif>
+      <label for="layoutInput">Layout</label>
+      <input class="form-control" name="layout" id="layoutInput" placeholder="Layout" autocomplete="off" type="text" required @if(isset($room)) value="{{ $room->layoutStr }}" @endif>
     </div>
     @if(isset($room))
       <button type="submit" class="btn btn-primary">Save!</button>

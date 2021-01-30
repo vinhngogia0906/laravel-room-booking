@@ -28,11 +28,11 @@
     </li>
     @can('edit.users')
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#users">Username</a>
+        <a class="nav-link" data-toggle="tab" href="#users">Edit Users</a>
     </li>
     @endcan
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#password">Password</a>
+        <a class="nav-link" data-toggle="tab" href="#password">Change Password</a>
     </li>
 </ul>
 <div class="row mt-4">
@@ -59,7 +59,7 @@
         </div>
         @can('edit.users')
         <div class="tab-pane fade" id="users">
-            <a href="{{ route('user.create') }}" class="btn btn-success">Edit User</a>
+            <a href="{{ route('user.create') }}" class="btn btn-success">Add new User</a>
             <table class="table table-hover mt-4">
                 <thead>
                 <tr>
@@ -128,7 +128,7 @@
                 <div class="form-group row">
                     <div class="col-md-5 offset-md-5">
                         <button type="submit" class="btn btn-primary">
-                            Aanpassen
+                            Update
                         </button>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
 
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button class="btn btn-primary" id="saveGuest">Save</button>
       </div>
     </div>

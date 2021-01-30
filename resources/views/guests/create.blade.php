@@ -1,7 +1,7 @@
 @extends('layout.base')
 
 @section('content')
-<h1>Gast</h1>
+<h1>Guest</h1>
 
 @if ($errors->any())
     <div class="alert alert-danger">

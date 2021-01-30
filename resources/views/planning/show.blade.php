@@ -129,7 +129,7 @@
 </div>
 
 <h3>Extra's
-  <a href="" class="btn btn-primary float-right js-add-extra">Extra toevoegen</a>
+  <a href="" class="btn btn-primary float-right js-add-extra">Add Extra</a>
 </h3>
 
 @unless($booking->extras->isEmpty())
@@ -186,7 +186,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Extra gast</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Extra guest</h5>
         <button class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

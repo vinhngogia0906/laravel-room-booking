@@ -1,7 +1,7 @@
 @extends('layout.base')
 
 @section('content')
-<h1>Gebruiker</h1>
+<h1>Update Profile</h1>
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -33,7 +33,7 @@
                     </div>
             </div>
             <div class="form-group row">
-                <label for="nameInput" class="col-sm-4 col-form-label">Naam</label>
+                <label for="nameInput" class="col-sm-4 col-form-label">Name</label>
                 <div class="col-sm-8">
                 <input class="form-control" name="name" id="nameInput"  autocomplete="off" type="text" required
                     @if(old('name')) value="{{ old('name') }}"
@@ -64,7 +64,7 @@
             @endif
             @if(!isset($user) || (isset($user) && !$update_me))
             <div class="form-group row">
-                <label for="role" class="col-sm-4 col-form-label">Rol</label>
+                <label for="role" class="col-sm-4 col-form-label">Role</label>
                 <div class="col-sm-8">
                 <select class="form-control custom-select" name="role" id="role" required>
                     @if(isset($roles))
